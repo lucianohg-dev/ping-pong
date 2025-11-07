@@ -1,0 +1,282 @@
+/* 🎮 Estilo principal da arena */
+.arena-container {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #001a33, #000);
+  color: #fff;
+  text-align: center;
+  padding: clamp(1rem, 2vw, 2.5rem);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.app-title{
+  text-align: center;
+}
+/* 🏆 Título principal */
+.title {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  text-shadow: 0 0 25px gold;
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* 📋 Área de entrada de jogadores */
+.player-entry {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid gold;
+  border-radius: 15px;
+  padding: clamp(1rem, 2vw, 1.8rem);
+  max-width: 900px;
+  margin: 0 auto clamp(2rem, 3vw, 3rem) auto;
+  box-shadow: 0 0 20px gold;
+}
+
+.player-entry h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  margin-bottom: 0.8rem;
+  color: gold;
+  text-transform: uppercase;
+}
+
+/* 🎯 Grid de jogadores */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(0.5rem, 1vw, 1rem);
+  margin-bottom: 1rem;
+}
+
+.player-grid select {
+  background: #001f3f;
+  color: white;
+  border: 1px solid gold;
+  border-radius: 8px;
+  padding: clamp(0.4rem, 1vw, 0.6rem);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* 🧠 Botões principais */
+.btn-generate {
+  background: gold;
+  color: black;
+  border: none;
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+.btn-generate:hover {
+  background: #ffdd33;
+  transform: scale(1.05);
+}
+
+/* 🧩 Estrutura do torneio */
+.bracket-layout-centered {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1rem, 2vw, 2.5rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Lados e centro */
+.side {
+  width: min(100%, 350px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+.center-stage {
+  width: min(100%, 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+/* 🏁 Cartas de partidas */
+.match-card {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  padding: clamp(0.8rem, 2vw, 1rem);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.06) inset, 0 6px 16px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 204, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+.match-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.match-card button {
+  width: 100%;
+  background: #002b5c;
+  color: #fff;
+  border: none;
+  padding: clamp(0.5rem, 1vw, 0.7rem);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  transition: 0.3s;
+}
+
+.match-card button:hover {
+  background: #004080;
+}
+
+.match-card button.winner {
+  background: gold;
+  color: black;
+  box-shadow: 0 0 10px gold;
+}
+
+/* Texto VS */
+.vs {
+  font-weight: bold;
+  color: #ffd400;
+  margin: 4px 0;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* 🏆 Campeão */
+.champion-banner {
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #ffd400, #ffdf80);
+  color: #111;
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 2rem);
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  box-shadow: 0 0 25px gold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 20px gold; }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px gold; }
+  100% { transform: scale(1); box-shadow: 0 0 20px gold; }
+}
+
+/* 🔐 Overlay do admin */
+.admin-lock-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  text-align: center;
+  padding: 1rem;
+}
+
+.admin-lock-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-lock-form input {
+  padding: clamp(0.6rem, 1.5vw, 0.8rem);
+  border-radius: 8px;
+  border: none;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  text-align: center;
+}
+
+.admin-lock-form button {
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  background: #ffcc00;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.admin-lock-form button:hover {
+  background: #ffdd33;
+}
+
+/* 🚪 Botão de sair */
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: #ff4444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ff6666;
+}
+
+/* ⏳ Estado de espera */
+.waiting-final {
+  color: #bfcad6;
+  margin-top: 6px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* 📱 Responsividade avançada */
+@media (max-width: 900px) {
+  .bracket-layout-centered {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .side, .center-stage {
+    width: 100%;
+  }
+
+  .player-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .arena-container {
+    padding: 1rem;
+  }
+
+  .player-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .match-card {
+    width: 100%;
+  }
+
+  .btn-generate {
+    width: 100%;
+  }
+}
