@@ -193,9 +193,9 @@ export default function Scoreboard() {
       {!isAuthorized && (
         <div
           style={{
+            marginTop:"-17px",
             position: "absolute",
-            inset: 0,
-            background: "rgba(0, 0, 0, 0.85)",
+            background: "transparent",
             color: "#fff",
             display: "flex",
             flexDirection: "column",
@@ -204,7 +204,7 @@ export default function Scoreboard() {
             zIndex: 9999,
           }}
         >
-          <h2>🔐 Acesso restrito ao administrador</h2>
+        
           <form
             onSubmit={handlePasswordSubmit}
             style={{
@@ -216,14 +216,18 @@ export default function Scoreboard() {
           >
             <input
               type="password"
-              placeholder="Digite a senha"
+              placeholder=" Senha do administrador"
               value={passwordInput}
               onChange={(e) => setPasswordInput(e.target.value)}
+              className="input-senha"
               style={{
                 padding: "10px",
                 borderRadius: "8px",
-                border: "none",
+                border: "solid 3px #ffcc00",
                 fontSize: "16px",
+                backgroundColor:"#ffffff",
+
+             
               }}
             />
             <button
