@@ -193,7 +193,9 @@ export default function Scoreboard() {
       {!isAuthorized && (
         <div
           style={{
-            marginTop:"-17px",
+            top: "3%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
             position: "absolute",
             background: "transparent",
             color: "#fff",
